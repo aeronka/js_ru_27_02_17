@@ -13,6 +13,7 @@ class Article extends Component {
     render() {
         const {article} = this.props;
         const {articleIsOpen} = this.state;
+        //Я б эту проверку спрятал в CommentList
         const comments = article.comments ? <CommentList comments={article.comments} /> : null;
         const body = articleIsOpen ? <section>{article.text}{comments}</section> : null;
 
