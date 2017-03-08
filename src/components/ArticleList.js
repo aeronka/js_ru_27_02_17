@@ -3,8 +3,7 @@ import Article from './Article'
 import toggleOpenArticle from '../decorators/toggleOpenArticle'
 
 function ArticleList(props) {
-    const {articles} = props
-    const {openArticleId, toggleOpenArticle} = props
+    const {articles, openArticleId, toggleOpenArticle} = props
 
     const articleComponents = articles.map(article => <li key={article.id}>
         <Article article={article}
@@ -23,5 +22,7 @@ function ArticleList(props) {
 export default toggleOpenArticle(ArticleList)
 
 ArticleList.propTypes = {
-    articles: PropTypes.array.isRequired
+    articles: PropTypes.array.isRequired,
+    openArticleId: PropTypes.string,
+    toggleOpenArticle: PropTypes.func.isRequired
 }
