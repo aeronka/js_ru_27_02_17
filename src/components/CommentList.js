@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Comment from './Comment'
+import NewCommentForm from './NewCommentForm'
 import toggleOpen from '../decorators/toggleOpen'
 
 class CommentList extends Component {
@@ -23,6 +24,7 @@ class CommentList extends Component {
             <div ref={this.getContainerRef}>
                 <a href="#" onClick={toggleOpen}>{isOpen ? 'hide' : 'show'} comments</a>
                 {this.getBody()}
+                <NewCommentForm/>
             </div>
         )
     }
