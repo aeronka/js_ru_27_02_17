@@ -11,6 +11,7 @@ export default (state = articles, action) => {
             if (!payload.selected.length) {
                 return articles
             }
+            //по сути ты удаляешь статьи, а должена хранить здесь список всех статей, а фильтровать где-то в другом месте(например в коннекте)
             return articles.filter(article => {
                 for (let articleId of payload.selected) {
                     if (article.id === articleId) {
